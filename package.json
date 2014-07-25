@@ -27,11 +27,13 @@
   "dependencies": {
     "bluebird": "^2.2.2",
     "busboy": "^0.2.8",
-    "express": "^4.6.1",
     "lodash.defaults": "^2.4.1"
   },
   "devDependencies": {
     "nodeunit": "^0.9.0"
+  },
+  "peerDependencies": {
+    "express": "^4.6.1"
   },
   "scripts": {
     "test": "nodeunit test"
