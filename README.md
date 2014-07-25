@@ -1,62 +1,21 @@
-[node-plist-native](http://mgcrea.github.com/node-plist-native) [![Build Status](https://secure.travis-ci.org/mgcrea/node-plist-native.png?branch=master)](http://travis-ci.org/#!/mgcrea/node-plist-native)
+[express-resumablejs](http://mgcrea.github.com/express-resumablejs) [![Build Status](https://secure.travis-ci.org/mgcrea/express-resumablejs.png?branch=master)](http://travis-ci.org/#!/mgcrea/express-resumablejs)
 =================
 
-Light, fast & memory efficient plist parser/builder that relies on [libxmljs](https://github.com/polotek/libxmljs).
+Resumable.js stream middleware for Express 4+.
 
 Quick start
 -----------
 
-Install the `libxml2-dev` package required by `libxmljs` on your system.
-
-Parsing a plist from file/string
+Default use
 ``` javascript
-var plist = require('plist-native');
-
-var obj = plist.parse(fs.readFileSync(__dirname + '/myPlist.plist')); // parses a buffer
-
-var obj2 = plist.parseString('<plist><string>Hello World!</string></plist>'); // parses a string
-
+var resumable = require('services/resumable')();
+app.use('/upload', resumable);
 ```
-
-Building a plist from an object:
-``` javascript
-var plist = require('plist-native');
-
-var buffer = plist.build({'foo' : 'bar'}); // returns a buffer
-
-var str = plist.buildString({'foo' : 'bar'}); // returns a string
-
-```
-
-Benchmarks
-----------
-
-Speed benchmark with `debug` working with a 13MB iTunes.xml plist library file:
-
->
-	------------------------------------------------------------------------------------
-	|   | library      | engine (dep)  | size (lines)  | parsing       | building      |
-	------------------------------------------------------------------------------------
-	| 1 | plist-native | libxmljs      | 106           | 2s638ms       | 3s139ms       |
-	| 2 | plist        | xmlbuilder    | 297           | 5s202ms +97%  | 3s698ms +18%  |
-	| 3 | xml2js       | sax           | 254           | 6s887ms +161% | n/a           |
-	------------------------------------------------------------------------------------
-
-Memory benchmark with `memwatch` working with a 13MB iTunes.xml plist library file:
-
->
-	------------------------------------------------------------------------------------
-	|   | library      | engine (dep)  | size (lines)  | parsing       | building      |
-	------------------------------------------------------------------------------------
-	| 1 | plist-native | libxmljs      | 106           | 52.86mb       | 16.78mb       |
-	| 2 | plist        | xmlbuilder    | 297           | 53.30mb +1%   | 156.34mb (?!) |
-	| 3 | xml2js       | sax           | 254           | 61.87mb +17%  | n/a           |
-	------------------------------------------------------------------------------------
 
 Testing
 -------
 
-node-plist-native is tested with `nodeunit`.
+express-resumablejs is tested with `nodeunit`.
 
 >
 	npm install --dev
@@ -80,7 +39,7 @@ Copyright and license
 
 	The MIT License
 
-	Copyright (c) 2012 Olivier Louvignes
+	Copyright (c) 2014 Olivier Louvignes
 
 	Permission is hereby granted, free of charge, to any person obtaining a copy
 	of this software and associated documentation files (the "Software"), to deal
