@@ -6,6 +6,10 @@ Resumable.js stream middleware for Express 4+.
 Quick start
 -----------
 
+``` bash
+npm install express-resumablejs
+```
+
 Default use
 ``` javascript
 var resumable = require('services/resumable')();
