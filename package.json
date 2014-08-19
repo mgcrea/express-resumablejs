@@ -2,7 +2,7 @@
   "name": "express-resumablejs",
   "description": "Resumable.js stream middleware for Express 4+",
   "main": "index.js",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "keywords": [
     "express",
     "resumable.js"
